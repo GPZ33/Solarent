@@ -2,7 +2,7 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('projects', {
+    await queryInterface.createTable('project', {
       id: {
         type: Sequelize.INTEGER,
         allowNull: false,
@@ -29,7 +29,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: true,
         references: {
-          model: 'cities', // nom de la table référencée
+          model: 'city', // nom de la table référencée
           key: 'code_name'
         },
         onUpdate: 'CASCADE',
@@ -49,7 +49,7 @@ module.exports = {
   },
   
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('projects');
+    await queryInterface.dropTable('project');
   }
 };
 

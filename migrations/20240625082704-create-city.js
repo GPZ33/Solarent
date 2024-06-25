@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('cities', {
+    await queryInterface.createTable('city', {
       code_name: {
         type: Sequelize.STRING,
         allowNull: false,
@@ -33,7 +33,7 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('cities');
+    await queryInterface.dropTable('city');
   }
 };
 
